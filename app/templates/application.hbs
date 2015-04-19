@@ -1,3 +1,36 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
 
-{{outlet}}
+      {{link-to 'CarMileager' 'index' class="brand-logo" }}
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>{{#link-to 'auth.sign-up'}}Sign-Up{{/link-to}}</li>
+        <li>{{#link-to 'auth.login'}}Login{{/link-to}}</li>
+      </ul>
+
+    </div>
+  </nav>
+</div>
+
+  {{outlet}}
+
+
+<footer class="page-footer red lighten-2">
+  <div class="container">
+    <div class="row">
+
+      <div class="col l6 s12">
+        <h5 class="white-text">About</h5>
+        <p class="white-text">Car Mileager is an free Open Source web application based on Ruby on Rails and Ember.js.</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container white-text">
+      Made by <a href="http://www.allisterantosik.com"><strong class="white-text">Allister Antosik</strong></a> |
+      Open Source on  <a href="https://github.com/allistera/"><strong class="white-text">GitHub</strong></a>
+    </div>
+  </div>
+</footer>

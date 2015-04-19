@@ -6,4 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
+
+
+
+  this.resource('auth', function() {
+    this.route('login');
+    this.route('sign-up');
+  });
 });
