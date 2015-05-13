@@ -43,5 +43,33 @@ module.exports = function(environment) {
 
   }
 
+  ENV.contentSecurityPolicy = {
+    'default-src': "*",
+    'script-src': "*",
+    'font-src': "*",
+    'connect-src': "*",
+    'img-src': "*",
+    'style-src': "*",
+    'media-src': "*"
+  }
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise',
+    crossOriginWhitelist:[
+     'http://api.carmileager.com',
+     'http://localhost:3000',
+     '*'
+    ]
+
+  };
+
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
+    resourceName: 'user',
+    identificationField: 'email',
+    passwordField: 'password'
+  };
+
+
   return ENV;
 };

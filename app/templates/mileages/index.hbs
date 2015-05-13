@@ -1,0 +1,11 @@
+<div class="container">
+
+  <ul class="collection">
+    {{#each mile in model}}
+      <li class="collection-item">
+        {{ mile.amount }} miles on {{date-and-time mile.date }}
+      </li>
+    {{/each}}
+  </ul>
+
+</div>

@@ -13,4 +13,9 @@ export default Router.map(function() {
     this.route('login');
     this.route('sign-up');
   });
+
+  this.resource('mileages', function(){
+
+
+  });
 });

@@ -4,14 +4,33 @@
 
       {{link-to 'CarMileager' 'index' class="brand-logo" }}
 
+      {{#if session.isAuthenticated}}
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a {{ action 'invalidateSession' }}>Logout</a></li>
+      </ul>
+      {{else}}
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>{{#link-to 'auth.sign-up'}}Sign-Up{{/link-to}}</li>
         <li>{{#link-to 'auth.login'}}Login{{/link-to}}</li>
       </ul>
+      {{/if}}
 
     </div>
   </nav>
 </div>
+{{#if session.isAuthenticated}}
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#test1">Yearly</a></li>
+      <li class="tab col s3"><a class="active" href="#test2">Monthly</a></li>
+      <li class="tab col s3"><a href="#test3">{{#link-to 'mileages'}}Records{{/link-to}}</a></li>
+      <li class="tab col s3"><a href="#test4">Create <i class="tiny mdi-content-add-circle-outline"></i></a></li>
+    </ul>
+  </div>
+</div>
+{{/if}}
+
 
   {{outlet}}
 

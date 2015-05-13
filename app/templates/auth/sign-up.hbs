@@ -1,13 +1,19 @@
 <div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card grey lighten-4">
-      <form action="" method="post">
+      
+      {{#if errors }}
+        <div class="card-panel red lighten-4">This is a card panel with a teal lighten-2 class</div>
+      {{/if}}
+
+      <form {{action 'submit' on='submit'}}>
         <div class="card-content">
           <span class="card-title black-text">Sign-Up</span>
 
-            {{input placeholder="Email Address" name="email"}}
-            {{input type="password" placeholder="Password" name="password"}}
-            {{input type="password" placeholder="Password Confirmation" name="password_confirmation"}}
+            {{input placeholder="Email Address" value=email}}
+            {{input type="password" placeholder="Password" value=password}}
+            {{input type="password" placeholder="Password Confirmation"
+value=password_confirmation}}
 
         </div>
         <div class="card-action">

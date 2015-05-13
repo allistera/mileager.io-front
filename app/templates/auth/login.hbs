@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card grey lighten-4">
-      <form action="" method="post">
+      <form {{action 'authenticate' on='submit'}}>
         <div class="card-content">
           <span class="card-title black-text">Login</span>
 
-            {{input placeholder="Email Address" name="email"}}
-            {{input type="password" placeholder="Password" name="password"}}
+            {{input id='identification' placeholder='Enter Email' value=identification}}
+            {{input id='password' placeholder='Enter Password' type='password' value=password}}
 
         </div>
         <div class="card-action">
