@@ -1,0 +1,43 @@
+<div class="monthly-container">
+
+  <div class="item large-item">
+    <div class="radial-inner-bg large-radial-inner-bg progress-{{percentage}}">
+      {{percentage}}%
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <strong>Current Month: {{time-format currentDate 'MMMM'}} </strong>
+
+</div>
+
+<div class="monthly-container">
+  <hr>
+
+  <div class="row">
+    <ul class="monthly-tabs tabs">
+
+      {{#each year in years}}
+        <li class="tab col">
+          <a href="#year-{{year}}" {{action "changeYear" year}}>Year {{year}}</a>
+        </li>
+      {{/each}}
+
+    </ul>
+  </div>
+
+  {{#each year in years}}
+
+    <div id="year-{{year}}">
+
+      {{#each month in currentYear}}
+
+        {{percentage-bar month model.expected _view.contentIndex model.labels}}
+
+      {{/each}}
+
+    </div>
+
+  {{/each}}
+</div>

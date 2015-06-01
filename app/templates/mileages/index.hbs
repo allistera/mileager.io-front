@@ -4,6 +4,9 @@
     {{#each mile in model}}
       <li class="collection-item">
         {{ mile.amount }} miles on {{date-and-time mile.date }}
+        <a class="secondary-content" {{action 'delete' mile}}>
+          <i class="mdi-action-delete"></i>
+        </a>
       </li>
     {{/each}}
   </ul>

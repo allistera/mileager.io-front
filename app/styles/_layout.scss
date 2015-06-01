@@ -1,0 +1,45 @@
+
+.monthly-container {
+
+  margin: 30px auto;
+  width: 300px;
+  text-align: center;
+
+  &__label {
+      vertical-align: middle;
+      float: right;
+      margin-top: 40px;
+  }
+}
+
+.clearfix{
+  clear: both;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+.sub-menu {
+  @extend .tabs;
+}

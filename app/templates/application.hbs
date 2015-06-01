@@ -22,16 +22,16 @@
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a href="#test1">Yearly</a></li>
-      <li class="tab col s3"><a class="active" href="#test2">Monthly</a></li>
-      <li class="tab col s3"><a href="#test3">{{#link-to 'mileages'}}Records{{/link-to}}</a></li>
-      <li class="tab col s3"><a href="#test4">Create <i class="tiny mdi-content-add-circle-outline"></i></a></li>
+      <li class="tab col s3">{{#link-to 'mileages.yearly'}}Yearly{{/link-to}}</li>
+      <li class="tab col s3">{{#link-to 'mileages.monthly'}}Monthly{{/link-to}}</li>
+      <li class="tab col s3">{{#link-to 'mileages'}}Records{{/link-to}}</li>
+      <li class="tab col s3">{{#link-to 'mileages.create'}}Create <i class="tiny mdi-content-add-circle-outline"></i>{{/link-to}}</li>
     </ul>
   </div>
 </div>
 {{/if}}
 
-
+  {{ember-notify closeAfter=40000000}}
   {{outlet}}
 
 

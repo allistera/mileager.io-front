@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m3">
+      <button class="waves-effect waves-light btn primary-background" {{bindAttr disabled="prevButton"}} {{action
+'prevYear'}} >
+        <i class="mdi-hardware-keyboard-arrow-left"></i>
+        Previous Year
+      </button>
+    </div>
+
+    <div class="col s12 m6 center">
+      <h4>Year {{currentYear}} of {{totalYears}}</h4>
+    </div>
+
+    <div class="col s12 m3">
+      <button class="waves-effect waves-light btn right primary-background" {{bindAttr disabled="nextButton"}} {{action
+'nextYear'}}>
+        Next Year
+        <i class="mdi-hardware-keyboard-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+
+  {{ember-chart type='line' data=chartData width=1200 height=600}}
+  
+</div>
+{{currentYear}}

@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import User from '../../models/user.js';
 
 export default Ember.Route.extend({
   setupController: function(controller, model) {

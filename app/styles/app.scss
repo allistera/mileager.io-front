@@ -1,0 +1,12 @@
+.parallax-container {
+  height: 350px;
+}
+
+.opacity-7{
+  opacity: 0.7;
+}
+
+@import "components/progress_bar";
+@import "components/errors";
+
+@import "layout";

@@ -1,0 +1,56 @@
+.item {
+  margin-bottom: 20px;
+  position: relative;
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+.radial-inner-bg {
+  border-radius: 50%;
+  width: 98px;
+  height: 98px;
+  top: 8px;
+  left: 8px;
+  background: #fff;
+  position: absolute;
+  font-size: 2em;
+  padding: 27px 0 0 17px
+}
+
+.large-item {
+  width: 300px;
+  height: 300px;
+}
+
+.large-radial-inner-bg {
+  width: 257px;
+  height: 257px;
+  top: 20px;
+  left: 20px;
+  font-size: 5em;
+  padding: 80px 0 0 0;
+}
+
+.percentage__red {
+  @extend .red, .lighten-2;
+}
+
+$step: 1; // step of % for created classes
+$loops: 100;
+$increment: (360 / $loops);
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .progress-#{$i*$step} {
+    @if $i < 50 {
+    $nextdeg: 90deg + ( $increment * $i );
+    background-image: linear-gradient(90deg, #e1e3e2 50%, transparent 50%, transparent), linear-gradient($nextdeg, #64b5f6 50%, #e1e3e2 50%, #e1e3e2);
+    }
+    @else {
+    $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+    background-image: linear-gradient($nextdeg, #64b5f6 50%, transparent 50%, transparent), linear-gradient(270deg, #64b5f6 50%, #e1e3e2 50%, #e1e3e2);
+    }
+  }
+}
