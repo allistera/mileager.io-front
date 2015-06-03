@@ -12,6 +12,10 @@ export default Router.map(function() {
     this.route('sign-up');
   });
 
+  this.resource('user', function() {
+    this.route('settings')
+  });
+
   this.resource('mileages', function(){
     this.route('create');
     this.route('yearly');

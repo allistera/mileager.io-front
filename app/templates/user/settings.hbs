@@ -1,0 +1,16 @@
+<div class="container">
+
+  <h4>Your Settings</h4>
+
+  <form {{action 'submit' on='submit'}}>
+
+    {{#each setting in model}}
+      {{placeholder-translation setting.name placeholders}}
+      {{input type="text" name=setting.name value=setting.value }}
+    {{/each}}
+
+    <button class="waves-effect waves-light btn">Update</button>
+
+  </form>
+
+</div>
