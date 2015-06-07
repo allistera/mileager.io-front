@@ -57,7 +57,7 @@ export default Ember.Controller.extend({
   }.property('currentYear'),
 
   prevButton: function() {
-    return (this.get('totalYears') > this.get('currentYear'));
+    return this.get('currentYear') == 1 ;
   }.property('currentYear'),
 
   nextButton: function() {
