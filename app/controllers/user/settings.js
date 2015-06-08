@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
         STARTING_MONTH: 'Starting Date',
         STARTING_MILEAGE: 'Starting Mileage',
         YEARLY_MILEAGE: 'Yearly Mileage'
-      }
+      };
     }.property(),
 
     actions:{
@@ -16,10 +16,10 @@ export default Ember.Controller.extend({
         var putData = {};
 
         this.get('model').map(function(setting){
-          putData[setting.get('name')] = setting.get('value')
+          putData[setting.get('name')] = setting.get('value');
         });
 
-        $.ajax({
+        Ember.$.ajax({
           url: '/v1/settings/update',
           type: 'PUT',
           data: { settings: putData },

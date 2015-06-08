@@ -13,7 +13,7 @@ export default Router.map(function() {
   });
 
   this.resource('user', function() {
-    this.route('settings')
+    this.route('settings');
   });
 
   this.resource('mileages', function(){
