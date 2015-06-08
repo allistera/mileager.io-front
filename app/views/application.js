@@ -2,6 +2,6 @@ import Ember from "ember";
 
 export default Ember.View.extend({
   didInsertElement: function(){
-    $('ul.tabs').tabs();
+    Ember.$('ul.tabs').tabs();
   }
 });

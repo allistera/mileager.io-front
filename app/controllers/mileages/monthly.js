@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
   }.property(),
 
   years: function() {
-    return Array.apply(null, Array(Math.ceil(this.get('model.actual').length / 12))).map(function(index, key) { return key + 1 });
+    return Array.apply(null, new Array(Math.ceil(this.get('model.actual').length / 12))).map(function(index, key) { return key + 1; });
   }.property(),
 
   currentYear: function(){
