@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h4>Welcome...</h4>
+  <br>
+
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header mileage-term-details active"><i class="mdi-device-access-time"></i>Term Details</div>
+      <div class="collapsible-body">
+        <p>
+          {{input type="date" placeholder="Starting Date" value=starting_date size="50"}}
+
+          {{input type="number" placeholder="Term Length" value=term_length
+          max="100"}}
+
+          <div class="right-align">
+            <button class="btn waves-effect waves-light" {{action 'walkthrough_next'}} type="submit" name="action">
+              Next
+              <i class="mdi-content-send right"></i>
+            </button>
+          </div>
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header mileage-details-header"><i class="mdi-maps-place"></i>Mileage Details</div>
+      <div class="collapsible-body">
+        <p>
+          {{input type="number" placeholder="Yearly Mileage"
+          value=yearly_mileage max="100000"}}
+
+          {{input type="number" placeholder="Starting Mileage"
+          value=starting_mileage max="100"}}
+         
+          <div class="right-align">
+            <button class="btn waves-effect waves-light" type="submit" {{action
+              'save'}}>
+              Save
+              <i class="mdi-content-send right"></i>
+            </button>
+          </div>
+        </p>
+      </div>
+    </li>
+  </ul>
+
+
+</div>

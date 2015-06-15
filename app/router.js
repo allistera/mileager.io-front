@@ -14,6 +14,7 @@ export default Router.map(function() {
 
   this.resource('user', function() {
     this.route('settings');
+    this.route('walkthrough');
   });
 
   this.resource('mileages', function(){
