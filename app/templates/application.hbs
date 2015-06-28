@@ -1,18 +1,18 @@
 <div class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper container">
 
-      {{link-to 'CarMileager' 'index' class="brand-logo" }}
+      {{link-to 'CarMileager' 'index' class="brand-logo white-text" }}
 
       {{#if session.isAuthenticated}}
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>{{#link-to 'user.settings'}}Settings{{/link-to}}</li>
-        <li><a {{ action 'invalidateSession' }}>Logout</a></li>
+        <li class="tooltipped" data-tooltip="Settings">{{#link-to 'user.settings'}}<i class="material-icons white-text">settings</i>{{/link-to}}</li>
+        <li class="tooltipped" data-tooltip="Logout">{{#link-to 'auth.sign-out'}}<i class="material-icons white-text">power_settings_new</i>{{/link-to}}</li>
       </ul>
       {{else}}
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>{{#link-to 'auth.sign-up'}}Sign-Up{{/link-to}}</li>
-        <li>{{#link-to 'auth.login'}}Login{{/link-to}}</li>
+        <li class="tooltipped" data-tooltip="Sign me up">{{#link-to 'auth.sign-up'}}<i class="material-icons white-text">playlist_add</i>{{/link-to}}</li>
+        <li class="tooltipped" data-tooltip="Login">{{#link-to 'auth.login'}}<i class="material-icons white-text">lock</i>{{/link-to}}</li>
       </ul>
       {{/if}}
 
@@ -20,14 +20,16 @@
   </nav>
 </div>
 {{#if session.isAuthenticated}}
-<div class="row">
-  <div class="col s12">
-    <ul class="tabs">
-      <li class="tab col s3">{{#link-to 'mileages.yearly'}}Yearly{{/link-to}}</li>
-      <li class="tab col s3">{{#link-to 'mileages.monthly'}}Monthly{{/link-to}}</li>
-      <li class="tab col s3">{{#link-to 'mileages'}}Records{{/link-to}}</li>
-      <li class="tab col s3">{{#link-to 'mileages.create'}}Create <i class="tiny mdi-content-add-circle-outline"></i>{{/link-to}}</li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3">{{#link-to 'mileages.yearly'}}Yearly{{/link-to}}</li>
+        <li class="tab col s3">{{#link-to 'mileages.monthly'}}Monthly{{/link-to}}</li>
+        <li class="tab col s3">{{#link-to 'mileages'}}Records{{/link-to}}</li>
+        <li class="tab col s3">{{#link-to 'mileages.create'}}Create <i class="tiny mdi-content-add-circle-outline"></i>{{/link-to}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 {{/if}}
