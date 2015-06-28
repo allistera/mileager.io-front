@@ -1,33 +1,29 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
-    placeholders: function(){
-      return {
-        DURATION: 'Contract Duration',
-        STARTING_MONTH: 'Starting Date',
-        STARTING_MILEAGE: 'Starting Mileage',
-        YEARLY_MILEAGE: 'Yearly Mileage'
-      };
-    }.property(),
-
     actions:{
-      submit: function(){
+      walkthrough_next: function(){
+        Ember.$('.mileage-details-header').addClass('active');
+        Ember.$('.mileage-term-details').removeClass('active');
+        Ember.$('.collapsible').collapsible();
+      },
+      save: function() {
 
-        var putData = {};
-
-        this.get('model').map(function(setting){
-          putData[setting.get('name')] = setting.get('value');
-        });
+        var data = {
+          starting_date: this.get('model.starting_date'),
+          term_length: this.get('model.term_length'),
+          yearly_mileage: this.get('model.yearly_mileage'),
+          starting_mileage: this.get('model.starting_mileage')
+        };
 
         Ember.$.ajax({
-          url: '/v1/settings/update',
-          type: 'PUT',
-          data: { settings: putData },
+          url: '/v1/settings',
+          type: 'POST',
+          data: { settings: data, walkthrough: true},
         }).done(function(){
-          this.notify.success('Settings successfully updated.');
+          this.notify.success('Settings successfully saved.');
+          this.transitionTo('mileages.yearly');
         }.bind(this) );
-
       }
-
     }
 });
