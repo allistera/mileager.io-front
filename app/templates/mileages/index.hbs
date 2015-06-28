@@ -1,14 +1,20 @@
 <div class="container">
 
-  <ul class="collection">
-    {{#each mile in model}}
-      <li class="collection-item">
-        {{ mile.amount }} miles on {{date-and-time mile.date }}
-        <a class="secondary-content" {{action 'delete' mile}}>
-          <i class="mdi-action-delete"></i>
-        </a>
-      </li>
-    {{/each}}
-  </ul>
+  {{#if model}}
+    <ul class="collection">
+      {{#each mile in model}}
+        <li class="collection-item">
+          {{ mile.amount }} miles on {{date-and-time mile.date }}
+          <a class="secondary-content" {{action 'delete' mile}}>
+            <i class="mdi-action-delete"></i>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <div>
+      <h5 class="center-align">No Miles Recorded</h5>
+    </div>
+  {{/if}}
 
 </div>
