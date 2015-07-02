@@ -19,9 +19,9 @@
   clear: both;
 }
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
+.tabs .active, .tabs li:hover {
+    border-bottom: solid 1px #e57373;
+
 }
 .parallax-container {
   min-height: 380px;
