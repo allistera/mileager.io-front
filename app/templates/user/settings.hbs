@@ -8,10 +8,15 @@
       <div class="collapsible-header mileage-term-details active"><i class="mdi-device-access-time"></i>Term Details</div>
       <div class="collapsible-body">
         <p>
-          {{input type="date" placeholder="Starting Date" value=model.starting_date size="50"}}
+            <div class="input-field">
+              {{input type="date" name="starting_date" value=model.starting_date size="50"}}
+              <label for="starting_date" class="active">Starting Date</label>
+            </div>
 
-          {{input type="number" placeholder="Term Length" value=model.term_length
-          max="100"}}
+            <div class="input-field">
+                {{input type="number" id="term_length" value=model.term_length max="100"}}
+                <label for="term_length" class="active">Term Length (Months)</label>
+            </div>
 
           <div class="right-align">
             <button class="btn waves-effect waves-light primary-background" {{action 'walkthrough_next'}} type="submit" name="action">
@@ -26,8 +31,16 @@
       <div class="collapsible-header mileage-details-header"><i class="mdi-maps-place"></i>Mileage Details</div>
       <div class="collapsible-body">
         <p>
-          {{input type="number" placeholder="Yearly Mileage"
-          value=model.yearly_mileage max="100000"}}
+
+            <div class="input-field">
+                {{input type="number" id="yearly_mileage" value=model.yearly_mileage max="100000"}}
+                <label for="yearly_mileage" class="active">Yearly Mileage</label>
+            </div>
+
+            <div class="input-field">
+                {{input type="number" id="starting_mileage" value=model.starting_mileage max="100"}}
+                <label for="starting_mileage" class="active">Starting Mileage</label>
+            </div>
 
           {{input type="number" placeholder="Starting Mileage"
           value=model.starting_mileage max="100"}}
