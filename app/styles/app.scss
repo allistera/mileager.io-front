@@ -1,3 +1,6 @@
+@import 'components/color';
+@import 'components/variables';
+
 .parallax-container {
   height: 350px;
 }
@@ -11,11 +14,8 @@
   padding: 10px;
 }
 
-.primary-background {
-    background: #e57373;
-}
-
 @import "components/progress_bar";
 @import "components/errors";
 
 @import "layout";
+@import 'materialize';

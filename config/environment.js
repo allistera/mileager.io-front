@@ -1,4 +1,5 @@
 /* jshint node: true */
+/* jshint node: true */
 
 module.exports = function(environment) {
   var ENV = {
@@ -51,7 +52,7 @@ module.exports = function(environment) {
     'img-src': "*",
     'style-src': "*",
     'media-src': "*"
-  }
+    };
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise',
