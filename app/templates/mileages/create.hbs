@@ -1,11 +1,22 @@
-<div class="container">
-
-  <form {{action 'submit' on='submit'}}>
-    {{input type="text" value=date placeholder="Date"}}
-    {{input type="text" value=amount placeholder="Amount"}}
-
-    <button class="waves-effect waves-light btn primary-background">Create</button>
-
-  </form>
-
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card grey lighten-4">
+      <form {{action 'submit' on='submit'}}>
+        <div class="card-content">
+          <span class="card-title black-text">New Mileage Entry</span>
+          <div class="input-field">
+            {{input type="text" value=date id="date"}}
+            <label for="date" class="active">Date</label>
+          </div>
+          <div class="input-field">
+            {{input type="text" value=amount id="amount"}}
+            <label for="date">Amount (Miles)</label>
+          </div>
+        </div>
+        <div class="card-action">
+          <button class="waves-effect waves-light btn primary-background">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

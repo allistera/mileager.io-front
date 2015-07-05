@@ -1,6 +1,8 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
+    date: new Date().toLocaleDateString("en-GB"),
+
     actions:{
       submit: function(){
         var mileage = this.store.createRecord('mileage', {
