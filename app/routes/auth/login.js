@@ -6,9 +6,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     sessionAuthenticationSucceeded: function() {
       var walkthrough = this.get('session.secure.walkthrough');
       if(walkthrough){
-        this.transitionToRoute('user.settings');
+        this.transitionTo('user.settings');
       }else{
-        this.transitionToRoute('mileages.yearly');
+        this.transitionTo('mileages.yearly');
       }
     },
     sessionAuthenticationFailed: function(error) {
