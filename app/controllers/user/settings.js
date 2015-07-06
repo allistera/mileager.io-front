@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
           data: { settings: data, walkthrough: true},
         }).done(function(){
           this.notify.success('Settings successfully saved.');
-          this.transitionTo('mileages.yearly');
+          this.transitionToRoute('mileages.yearly');
         }.bind(this) );
       }
     }

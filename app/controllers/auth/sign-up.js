@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
       Ember.$.post('/users', { user: {email: data.email, password: data.password, password_confirmation: data.password_confirmation }}, function() {
         this.notify.success('Account successfully created, try logging in.');
-        router.transitionTo('auth.login');
+        router.transitionToRoute('auth.login');
       }.bind(this) ).fail(function(){
         this.notify.warning('Please check your email and password and try again.');
       }.bind(this));
