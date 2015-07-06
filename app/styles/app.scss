@@ -1,10 +1,6 @@
 @import 'components/color';
 @import 'components/variables';
 
-.parallax-container {
-  height: 350px;
-}
-
 .opacity-7{
   opacity: 0.7;
 }
@@ -17,5 +13,9 @@
 @import "components/progress_bar";
 @import "components/errors";
 
-@import "layout";
 @import 'materialize';
+@import "layout";
+
+.parallax-container {
+  height: 300px;
+}
