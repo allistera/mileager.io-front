@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
         };
 
         Ember.$.ajax({
-          url: '/v1/settings',
+          url: '/api/v1/settings',
           type: 'POST',
           data: { settings: data, walkthrough: true},
         }).done(function(){
