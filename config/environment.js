@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+      ENV.baseURL = '/';
   }
 
   ENV.contentSecurityPolicy = {
@@ -57,7 +57,7 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise',
     crossOriginWhitelist:[
-     'http://api.carmileager.com',
+     'http://api.mileager.io',
      'http://localhost:3000',
      '*'
     ]
@@ -65,7 +65,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-devise'] = {
-    serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
+    serverTokenEndpoint: '/api/users/sign_in',
     resourceName: 'user',
     identificationField: 'email',
     passwordField: 'password'
