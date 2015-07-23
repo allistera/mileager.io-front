@@ -38,6 +38,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:ephemeral'
+    };
+
   }
 
   if (environment === 'production') {
@@ -56,6 +61,7 @@ module.exports = function(environment) {
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise',
+    authenticationRoute: '/auth/login',
     crossOriginWhitelist:[
      'http://api.mileager.io',
      'http://localhost:3000',
