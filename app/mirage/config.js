@@ -9,7 +9,7 @@ export default function() {
       return {"mileages":[{"id":2,"amount":1000.0,"date":"2015-07-14"}]};
     });
 
-    this.post('/api/v1/mileages/:id', function() {
+    this.delete('/api/v1/mileages/:id', function() {
       return {};
     });
 
@@ -22,6 +22,10 @@ export default function() {
     });
 
     this.get('/api/v1/settings', function() {
+      return {"settings":[{"starting_date":"2015-01-01","term_length":"24","yearly_mileage":"10000","starting_mileage":"","id":null}]};
+    });
+
+    this.post('/api/v1/settings', function() {
       return {"settings":[{"starting_date":"2015-01-01","term_length":"24","yearly_mileage":"10000","starting_mileage":"","id":null}]};
     });
 
