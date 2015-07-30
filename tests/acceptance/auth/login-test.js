@@ -7,6 +7,7 @@ var application;
 module('Acceptance | auth/login', {
   beforeEach: function() {
     application = startApp();
+    invalidateSession();
   },
 
   afterEach: function() {

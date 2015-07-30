@@ -32,6 +32,10 @@ export default function() {
     this.post('/api/users', function() {
       return {};
     });
+
+    this.post('/api/users/sign_in', function() {
+      return {};
+    });
 }
 
 /*

@@ -1,5 +1,6 @@
 {
   "framework": "qunit",
+  "phantomjs_debug_port": 9000,
   "test_page": "tests/index.html?hidepassed",
   "disable_watching": true,
   "launch_in_ci": [
