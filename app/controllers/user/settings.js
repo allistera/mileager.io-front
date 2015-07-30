@@ -21,8 +21,10 @@ export default Ember.Controller.extend({
           type: 'POST',
           data: { settings: data, walkthrough: true},
         }).done(function(){
-          this.notify.success('Settings successfully saved.');
-          this.transitionToRoute('mileages.yearly');
+            Ember.run(function() {
+                this.notify.success('Settings successfully saved.');
+                this.transitionToRoute('mileages.yearly');
+            }.bind(this));
         }.bind(this) );
       }
     }
