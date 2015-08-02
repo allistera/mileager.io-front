@@ -34,11 +34,15 @@ test('must be logged in', function(assert) {
 });
 
 test('shows correct current month', function(assert) {
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  var d = new Date();
 
   visit('/mileages/monthly');
 
   andThen(function() {
-    assert.equal(find('.monthly-container:first strong:first').text().trim(), 'Current Month: July');
+    assert.equal(find('.monthly-container:first strong:first').text().trim(), 'Current Month: ' + monthNames[d.getMonth()] );
   });
 });
 
