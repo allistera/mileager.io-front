@@ -4,16 +4,25 @@
 
       {{link-to 'mileager.io' 'index' class="brand-logo white-text" }}
 
+
       {{#if session.isAuthenticated}}
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down">
         <li class="tooltipped" data-tooltip="Settings">{{#link-to 'user.settings'}}<i class="material-icons white-text">settings</i>{{/link-to}}</li>
         <li class="tooltipped" data-tooltip="Logout">{{#link-to 'auth.sign-out'}}<i class="material-icons white-text">power_settings_new</i>{{/link-to}}</li>
       </ul>
+      <ul id="slide-out" class="side-nav">
+          <li>{{#link-to 'user.settings'}}Settings{{/link-to}}</li>
+          <li>{{#link-to 'auth.sign-out'}}Logout{{/link-to}}</li>
+      </ul>
       {{else}}
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down">
         <li class="tooltipped" data-tooltip="Login">{{#link-to 'auth.login'}}<i class="material-icons white-text">lock</i>{{/link-to}}</li>
       </ul>
+      <ul id="slide-out" class="side-nav">
+          <li>{{#link-to 'auth.login'}}Login{{/link-to}}</li>
+      </ul>
       {{/if}}
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
     </div>
   </nav>
