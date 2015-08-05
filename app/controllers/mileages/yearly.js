@@ -19,6 +19,8 @@ export default Ember.Controller.extend({
     return 1;
   }.property(),
 
+  chartOptions: { responsive: true },
+
   chartData: function() {
     var data = this.get('model');
     this.set('totalYears', data.mileages[0].expected.length / 12);
