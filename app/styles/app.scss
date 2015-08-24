@@ -6,6 +6,11 @@
 .homepage-screenshot {
   width: 95%;
   padding: 10px;
+
+  &_monthly {
+    width: 400px;
+  }
+
 }
 
 @import "components/progress_bar";
