@@ -12,8 +12,7 @@ export default Ember.Controller.extend({
       var data = this.getProperties('email', 'password', 'password_confirmation');
 
       Ember.$.post('/api/users', { user: {email: data.email, password: data.password, password_confirmation: data.password_confirmation }}, function() {
-        this.notify.success('Account successfully created, try logging in.');
-        router.transitionToRoute('auth.login');
+        router.transitionTo('auth.sign-up-success');
       }.bind(this) ).fail(function(){
         this.notify.warning('Please check your email and password and try again.');
       }.bind(this));
