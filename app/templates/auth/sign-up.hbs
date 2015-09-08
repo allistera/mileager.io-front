@@ -2,18 +2,18 @@
   <div class="col s12 m6 offset-m3">
     <div class="card grey lighten-4">
 
-      {{#each errors }}
-        <div class="card-panel red lighten-4">{{this}}</div>
+      {{#each error in errors }}
+        <div class="card-panel red lighten-4">{{error}}</div>
       {{/each}}
 
       <form {{action 'submit' on='submit'}}>
         <div class="card-content">
           <span class="card-title black-text">Sign-Up</span>
 
-            {{input placeholder="Email Address" value=email}}
-            {{input type="password" placeholder="Password" value=password}}
+            {{input placeholder="Email Address" value=email name="email_address"}}
+            {{input type="password" placeholder="Password" value=password name="password"}}
             {{input type="password" placeholder="Password Confirmation"
-value=password_confirmation}}
+value=password_confirmation name="password_confirmation"}}
 
         </div>
         <div class="card-action">

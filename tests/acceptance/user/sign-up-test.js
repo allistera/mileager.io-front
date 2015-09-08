@@ -23,3 +23,15 @@ test('visiting auth/sign-up', function(assert) {
     assert.equal(currentURL(), '/auth/sign-up');
   });
 });
+
+test('redirects to sign up success', function(assert) {
+  visit('/auth/sign-up');
+  fillIn('input[name=email_address]', 'me@tester.com');
+  fillIn('input[name=password]', 'testpassword');
+  fillIn('input[name=password_confirmation]', 'testpassword');
+  click('input.btn');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/auth/sign-up-success');
+  });
+});

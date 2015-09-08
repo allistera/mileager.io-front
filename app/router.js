@@ -10,6 +10,8 @@ export default Router.map(function() {
   this.resource('auth', function() {
     this.route('login');
     this.route('sign-up');
+    this.route('sign-up-success');
+    this.route('sign-up-verify', { path: '/sign-up/verify/:verification_code' });
     this.route('sign-out');
   });
 

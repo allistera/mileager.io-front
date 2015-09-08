@@ -13,8 +13,11 @@
 
 }
 
+@import "bower_components/spinners/stylesheets/_spinners.scss";
+
 @import "components/progress_bar";
 @import "components/errors";
+@import "components/spinner";
 
 @import "layout";
 

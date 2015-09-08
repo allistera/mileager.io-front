@@ -30,11 +30,33 @@ export default function() {
     });
 
     this.post('/api/users', function() {
-      return {};
+      return {
+        "id": 2,
+        "email": "testers@gmail.com",
+        "walkthrough": true,
+        "authentication_token": "tesqr3re",
+        "starting_date": null,
+        "term_length": null,
+        "yearly_mileage": null,
+        "starting_mileage": null
+      };
     });
 
     this.post('/api/users/sign_in', function() {
       return {};
+    });
+
+    this.get('/api/users/confirmation', function() {
+      return {
+        "id": 2,
+        "email": "testers@gmail.com",
+        "walkthrough": true,
+        "authentication_token": "tesqr3re",
+        "starting_date": null,
+        "term_length": null,
+        "yearly_mileage": null,
+        "starting_mileage": null
+      };
     });
 }
 
