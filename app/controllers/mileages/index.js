@@ -5,9 +5,9 @@ export default Ember.Controller.extend({
 
         delete: function(mile){
           mile.deleteRecord();
-          mile.save().then(function(){
+          mile.save().then(() => {
             this.notify.success('Mileage entry successfully deleted.');
-          }.bind(this));
+          });
         }
 
     }
