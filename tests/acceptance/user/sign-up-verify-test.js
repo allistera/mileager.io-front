@@ -19,6 +19,6 @@ test('visiting auth/sign-up/verify/:verification', function(assert) {
   visit('/auth/sign-up/verify/1212');
 
   andThen(function() {
-    assert.equal(currentURL(), '/sign-in');
+    assert.equal(currentURL(), '/auth/login');
   });
 });

@@ -8,13 +8,17 @@ export default Ember.Route.extend({
 
   setupController: function(controller) {
 
-    Ember.$.ajax({
+    return Ember.$.ajax({
         url: '/api/users/confirmation?confirmation_token=' + this.get('verification_code'),
         type: 'GET'
     }).success(function(){
-      controller.set('isValidated', true);
+      Ember.run(function() {
+        controller.set('isValidated', true);
+      });
     }).fail(function(){
-      controller.set('isValidated', false);
+      Ember.run(function() {
+        controller.set('isValidated', false);
+      });
     });
 
   }

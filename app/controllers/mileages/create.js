@@ -9,10 +9,10 @@ export default Ember.Controller.extend({
           amount: this.get('amount'),
           date: this.get('date')
         });
-        mileage.save().then(function(){
+        mileage.save().then(() => {
           this.transitionToRoute('mileages');
           this.notify.success('Created mileage entry successfully.');
-        }.bind(this) );
+        });
       }
 
     }

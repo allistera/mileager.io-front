@@ -20,12 +20,12 @@ export default Ember.Controller.extend({
           url: '/api/v1/settings',
           type: 'POST',
           data: { settings: data, walkthrough: true},
-        }).done(function(){
-            Ember.run(function() {
+        }).done(() => {
+            Ember.run(() => {
                 this.notify.success('Settings successfully saved.');
                 this.transitionToRoute('mileages.yearly');
-            }.bind(this));
-        }.bind(this) );
+            });
+        } );
       }
     }
 });
