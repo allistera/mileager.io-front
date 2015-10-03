@@ -1,6 +1,11 @@
 <div class="container">
 
   {{#if model}}
+    <div>
+      <div class="right-align">
+        <a {{action 'export'}} class="tooltipped btn-floating btn-small disabled right-align" target="_blank" data-tooltip="Download as CSV"><i class="material-icons">assignment</i></a>
+      </div>
+    </div>
     <ul class="collection">
       {{#each mile in model}}
         <li class="collection-item">
