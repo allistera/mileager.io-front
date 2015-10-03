@@ -4,7 +4,13 @@ export default Ember.Controller.extend({
     actions:{
 
         export: function() {
-          Ember.$.get('/api/v1/mileages.csv');
+          Ember.$.get('/api/v1/mileages.csv').done((data) => {
+            var blob = new Blob([data]);
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'mileager-io-_' + new Date()+ '.csv';
+            link.click();
+          });
         },
 
         delete: function(mile){
