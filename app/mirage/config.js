@@ -5,6 +5,10 @@ export default function() {
       return {"mileages":[{"id":2,"amount":1000.0,"date":"2015-07-14"}]};
     });
 
+    this.get('/api/v1/mileages.csv', function() {
+      return {"mileages":[{"id":2,"amount":1000.0,"date":"2015-07-14"}]};
+    });
+
     this.post('/api/v1/mileages', function() {
       return {"mileages":[{"id":2,"amount":1000.0,"date":"2015-07-14"}]};
     });
