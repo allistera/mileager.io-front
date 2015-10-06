@@ -1,7 +1,15 @@
-import Ember from "ember";
+import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions:{
+      delete_account: function() {
+        Ember.$.ajax({url:'/api/v1/settings/delete_account', type: 'put'}).done(
+          () => {
+            this.controllerFor('application').send('invalidateSession');
+            this.notify.success('Successfully deleted account.');
+          }
+        );
+      },
       walkthrough_next: function(){
         Ember.$('.mileage-details-header').addClass('active');
         Ember.$('.mileage-term-details').removeClass('active');
