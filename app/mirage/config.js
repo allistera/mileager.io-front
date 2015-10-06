@@ -33,6 +33,10 @@ export default function() {
       return {"settings":[{"starting_date":"2015-01-01","term_length":"24","yearly_mileage":"10000","starting_mileage":"","id":null}]};
     });
 
+    this.put('/api/v1/settings/delete_account', function() {
+      return {};
+    });
+
     this.post('/api/users', function() {
       return {
         "id": 2,

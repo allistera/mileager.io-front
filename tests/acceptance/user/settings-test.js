@@ -45,3 +45,4 @@ test('settings are populated', function(assert) {
       click('#save');
     });
 });
+
