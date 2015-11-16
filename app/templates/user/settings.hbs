@@ -3,10 +3,19 @@
   <h4>Your settings...</h4>
   <br>
 
-  <ul class="collapsible" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header mileage-term-details active"><i class="mdi-device-access-time"></i>Term Details</div>
-      <div class="collapsible-body">
+  {{#em-tabs configName="bs"}}
+  <div class="row">
+    <div class="col s3">
+      <div class="collection">
+        {{#em-tab-list}}
+            {{#em-tab}}Your Car Contract{{/em-tab}}
+            {{#em-tab}}Your Account{{/em-tab}}
+        {{/em-tab-list}}
+      </div>
+    </div>
+    <div class="col s9">
+      <div class="section">
+        {{#em-tab-panel}}
         <p>
             <div class="input-field">
               {{input type="date" name="starting_date" value=model.starting_date size="50"}}
@@ -18,20 +27,6 @@
                 <label for="term_length" class="active">Term Length (Months)</label>
             </div>
 
-          <div class="right-align">
-            <button class="btn waves-effect waves-light primary-background" {{action 'walkthrough_next'}} type="submit" id="next">
-              Next
-              <i class="mdi-content-send right"></i>
-            </button>
-          </div>
-        </p>
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header mileage-details-header"><i class="mdi-maps-place"></i>Mileage Details</div>
-      <div class="collapsible-body">
-        <p>
-
             <div class="input-field">
                 {{input type="number" id="yearly_mileage" value=model.yearly_mileage max="100000"}}
                 <label for="yearly_mileage" class="active">Yearly Mileage</label>
@@ -42,17 +37,28 @@
                 <label for="starting_mileage" class="active">Starting Mileage</label>
             </div>
 
-          <div class="right-align">
-            <button class="btn waves-effect waves-light primary-background" type="submit" {{action
-              'save'}} id="save">
-              Save
-              <i class="mdi-content-send right"></i>
-            </button>
-          </div>
+            <div class="right-align">
+              <button class="btn waves-effect waves-light red lighten-2" {{action 'save'}} type="submit" id="next">
+                Save
+                <i class="mdi-content-send right"></i>
+              </button>
+            </div>
         </p>
+        {{/em-tab-panel}}
       </div>
-    </li>
-  </ul>
+      <div class="section">
+        {{#em-tab-panel}}
+          <button class="btn waves-effect waves-light red lighten-2" type="submit" {{action 'delete_account'}}>Delete Account
+            <i class="material-icons right">send</i>
+          </button>
+        {{/em-tab-panel}}
+      </div>
 
-  <a href="#" id="delete_account" {{action 'delete_account'}}>Delete Account</a>
+    </div>
+  </div>
+  {{/em-tabs}}
+
+
+
+
 </div>

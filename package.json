@@ -44,6 +44,7 @@
     "ember-composability": "0.0.5",
     "ember-data": "1.0.0-beta.16.1",
     "ember-export-application-global": "^1.0.2",
+    "ember-idx-tabs": "^0.1.4",
     "ember-key-responder": "0.2.1",
     "ember-modal-dialog": "0.7.5",
     "ember-new-computed": "1.0.2",
