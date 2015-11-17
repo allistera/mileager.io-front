@@ -4,7 +4,9 @@ import IdxConfig from 'ember-idx-utils/config';
 export default {
   name: 'ember-idx-tabs',
   initialize: function() {
-    var Config = Em.IdxConfig = Em.IdxConfig ? Em.IdxConfig : IdxConfig.create();
+    var Config =
+        Em.IdxConfig =
+        Em.IdxConfig ? Em.IdxConfig : IdxConfig.create();
 
     var defaultConfig = Config.getConfig('default');
     if (!defaultConfig) {
