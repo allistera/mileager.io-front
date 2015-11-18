@@ -10,11 +10,6 @@ export default Ember.Controller.extend({
           }
         );
       },
-      walkthrough_next: function(){
-        Ember.$('.mileage-details-header').addClass('active');
-        Ember.$('.mileage-term-details').removeClass('active');
-        Ember.$('.collapsible').collapsible();
-      },
       save: function() {
 
         var data = {

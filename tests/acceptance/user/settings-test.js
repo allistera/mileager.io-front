@@ -39,10 +39,8 @@ test('settings are populated', function(assert) {
     andThen(function() {
       assert.equal(find('[name="starting_date"]').val(), '2015-01-01');
       assert.equal(find('#term_length').val(), '24');
-      click('#next');
       assert.equal(find('#yearly_mileage').val(), '10000');
       assert.equal(find('#starting_mileage').val(), '');
       click('#save');
     });
 });
-
