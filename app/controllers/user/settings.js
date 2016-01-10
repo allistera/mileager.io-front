@@ -10,6 +10,25 @@ export default Ember.Controller.extend({
           }
         );
       },
+      change_password: function() {
+
+        var data = {
+          current_password: this.get('model.current_password'),
+          password: this.get('model.password'),
+          password_confirmation: this.get('model.password_confirmation')
+        };
+
+        Ember.$.ajax({url:'/api/v1/users/1', type: 'put', data: data}).done(
+          () => {
+            this.notify.success('Successfully changed password.');
+          }
+        ).fail(
+          () => {
+            this.notify.error('Failed to change password, please try again.');
+          }
+        );
+
+      },
       save: function() {
 
         var data = {
