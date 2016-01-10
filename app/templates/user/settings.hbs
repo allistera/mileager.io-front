@@ -1,64 +1,87 @@
 <div class="container">
 
   <h4>Your settings...</h4>
-  <br>
 
-  {{#em-tabs configName="bs"}}
-  <div class="row">
-    <div class="col s3">
-      <div class="collection">
-        {{#em-tab-list}}
-            {{#em-tab}}Your Car Contract{{/em-tab}}
-            {{#em-tab}}Your Account{{/em-tab}}
-        {{/em-tab-list}}
+
+    {{#em-tabs configName="bs"}}
+    <div class="row">
+      <div class="col s3">
+        <div class="collection">
+          {{#em-tab-list}}
+              {{#em-tab}}Your Car Contract{{/em-tab}}
+              {{#em-tab}}Change Password{{/em-tab}}
+              {{#em-tab}}Your Account{{/em-tab}}
+          {{/em-tab-list}}
+        </div>
       </div>
-    </div>
-    <div class="col s9">
-      <div class="section">
-        {{#em-tab-panel}}
-        <p>
+      <div class="col s9">
+        <div class="section">
+          {{#em-tab-panel}}
+          <p>
+              <div class="input-field">
+                {{input type="date" name="starting_date" value=model.starting_date size="50"}}
+                <label for="starting_date" class="active">Starting Date</label>
+              </div>
+
+              <div class="input-field">
+                  {{input type="number" id="term_length" value=model.term_length max="100"}}
+                  <label for="term_length" class="active">Term Length (Months)</label>
+              </div>
+
+              <div class="input-field">
+                  {{input type="number" id="yearly_mileage" value=model.yearly_mileage max="100000"}}
+                  <label for="yearly_mileage" class="active">Yearly Mileage</label>
+              </div>
+
+              <div class="input-field">
+                  {{input type="number" id="starting_mileage" value=model.starting_mileage max="100"}}
+                  <label for="starting_mileage" class="active">Starting Mileage</label>
+              </div>
+
+              <div class="right-align">
+                <button class="btn waves-effect waves-light red lighten-2" {{action 'save'}} type="submit" id="save">
+                  Save
+                  <i class="mdi-content-send right"></i>
+                </button>
+              </div>
+          </p>
+          {{/em-tab-panel}}
+        </div>
+        <div class="section">
+          {{#em-tab-panel}}
             <div class="input-field">
-              {{input type="date" name="starting_date" value=model.starting_date size="50"}}
-              <label for="starting_date" class="active">Starting Date</label>
+                {{input type="password" id="current_password" value=model.current_password max="100"}}
+                <label for="starting_mileage" class="active">Current Password</label>
             </div>
 
             <div class="input-field">
-                {{input type="number" id="term_length" value=model.term_length max="100"}}
-                <label for="term_length" class="active">Term Length (Months)</label>
+                {{input type="password" id="password" value=model.password max="100"}}
+                <label for="password" class="active">New Password</label>
             </div>
 
             <div class="input-field">
-                {{input type="number" id="yearly_mileage" value=model.yearly_mileage max="100000"}}
-                <label for="yearly_mileage" class="active">Yearly Mileage</label>
-            </div>
-
-            <div class="input-field">
-                {{input type="number" id="starting_mileage" value=model.starting_mileage max="100"}}
-                <label for="starting_mileage" class="active">Starting Mileage</label>
+                {{input type="password" id="password_confirmation" value=model.password_confirmation max="100"}}
+                <label for="password_confirmation" class="active">Confirm New Password</label>
             </div>
 
             <div class="right-align">
-              <button class="btn waves-effect waves-light red lighten-2" {{action 'save'}} type="submit" id="save">
-                Save
+              <button class="btn waves-effect waves-light red lighten-2" {{action 'changePassword'}} type="submit" id="save">
+                Update
                 <i class="mdi-content-send right"></i>
               </button>
             </div>
-        </p>
-        {{/em-tab-panel}}
-      </div>
-      <div class="section">
-        {{#em-tab-panel}}
-          <button class="btn waves-effect waves-light red lighten-2" type="submit" {{action 'delete_account'}}>Delete Account
-            <i class="material-icons right">send</i>
-          </button>
-        {{/em-tab-panel}}
-      </div>
 
+          {{/em-tab-panel}}
+        </div>
+        <div class="section">
+          {{#em-tab-panel}}
+            You can delete your account at any time by clicking <a {{action 'delete_account'}}>here</a>.
+          {{/em-tab-panel}}
+        </div>
+
+      </div>
     </div>
-  </div>
-  {{/em-tabs}}
-
-
+    {{/em-tabs}}
 
 
 </div>

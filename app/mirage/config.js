@@ -50,6 +50,10 @@ export default function() {
       };
     });
 
+    this.put("/api/v1/users/:id", function(){
+      return {};
+    });
+
     this.post('/api/users/sign_in', function() {
       return {};
     });
