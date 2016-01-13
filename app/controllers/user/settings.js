@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions:{
-      delete_account: function() {
+      deleteAccount: function() {
         Ember.$.ajax({url:'/api/v1/settings/delete_account', type: 'put'}).done(
           () => {
             this.controllerFor('application').send('invalidateSession');
@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
           }
         );
       },
-      change_password: function() {
+      changePassword: function() {
 
         var data = {
           current_password: this.get('model.current_password'),
